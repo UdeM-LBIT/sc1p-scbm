@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "scbm"
+dynamic = ["version"]
+description = "Exact MaxSAT solver for the Sandwich Consecutive-Block Minimization (SCBM) problem on ternary matrices."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+authors = [{ name = "Emeric Laberge", email = "emeric.laberge@umontreal.ca" }]
+maintainers = [{ name = "Emeric Laberge", email = "emeric.laberge@umontreal.ca" }]
+keywords = ["SCBM", "CBM", "consecutive blocks", "MaxSAT", "synteny", "phylogenetics"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Typing :: Typed",
+]
+dependencies = ["sc1p>=0.1.0"]
+
+[project.optional-dependencies]
+sat = ["python-sat>=1.9.dev0"]
+all = ["scbm[sat]"]
+
+[project.scripts]
+scbm = "scbm.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/UdeM-LBIT/sc1p-scbm"
+Repository = "https://github.com/UdeM-LBIT/sc1p-scbm"
+Issues = "https://github.com/UdeM-LBIT/sc1p-scbm/issues"
+
+[tool.hatch.version]
+path = "src/scbm/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/scbm"]

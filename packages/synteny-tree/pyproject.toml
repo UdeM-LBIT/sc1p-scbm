@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "synteny-tree"
+dynamic = ["version"]
+description = "Event matrices of synteny trees (gene gains and losses on a phylogenetic tree), for the SC1P and SCBM solvers."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+authors = [{ name = "Emeric Laberge", email = "emeric.laberge@umontreal.ca" }]
+maintainers = [{ name = "Emeric Laberge", email = "emeric.laberge@umontreal.ca" }]
+keywords = ["synteny", "gene order", "phylogenetics", "event matrix", "single-origin", "SC1P", "SCBM"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Typing :: Typed",
+]
+dependencies = ["sowing>=0.1"]
+
+[project.urls]
+Homepage = "https://github.com/UdeM-LBIT/sc1p-scbm"
+Repository = "https://github.com/UdeM-LBIT/sc1p-scbm"
+Issues = "https://github.com/UdeM-LBIT/sc1p-scbm/issues"
+
+[tool.hatch.version]
+path = "src/synteny_tree/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/synteny_tree"]

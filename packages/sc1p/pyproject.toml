@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sc1p"
+dynamic = ["version"]
+description = "SAT solver and reference implementation for the Sandwich Consecutive Ones Property (SC1P) of ternary matrices."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+authors = [{ name = "Emeric Laberge", email = "emeric.laberge@umontreal.ca" }]
+maintainers = [{ name = "Emeric Laberge", email = "emeric.laberge@umontreal.ca" }]
+keywords = ["SC1P", "consecutive ones", "sandwich matrices", "SAT", "synteny", "phylogenetics"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+sat = ["python-sat>=1.9.dev0"]
+all = ["sc1p[sat]"]
+
+[project.scripts]
+sc1p = "sc1p.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/UdeM-LBIT/sc1p-scbm"
+Repository = "https://github.com/UdeM-LBIT/sc1p-scbm"
+Issues = "https://github.com/UdeM-LBIT/sc1p-scbm/issues"
+
+[tool.hatch.version]
+path = "src/sc1p/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sc1p"]

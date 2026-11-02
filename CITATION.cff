@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the accompanying paper (preferred-citation) and this repository."
+title: "sc1p-scbm: exact SC1P and SCBM solvers for synteny histories"
+abstract: "Reference implementation of the SAT encoding of the Sandwich Consecutive Ones Property (SC1P) and the precedence MaxSAT encoding of the Sandwich Consecutive-Block Minimization (SCBM) problem on ternary matrices, together with the event matrices of synteny trees."
+authors:
+  - family-names: Laberge
+    given-names: Emeric
+    email: emeric.laberge@umontreal.ca
+    affiliation: "Department of Computer Science and Operations Research, Université de Montréal"
+version: "0.1.0"
+date-released: 2026-11-01
+license: MIT
+repository-code: "https://github.com/UdeM-LBIT/sc1p-scbm"
+url: "https://github.com/UdeM-LBIT/sc1p-scbm"
+keywords:
+  - SC1P
+  - SCBM
+  - SAT
+  - MaxSAT
+  - synteny
+  - gene order
+  - phylogenetics
+preferred-citation:
+  type: unpublished
+  title: "Ordering genes to minimize segmental gains and losses in synteny histories"
+  authors:
+    - family-names: Laberge
+      given-names: Emeric
+    - family-names: Delabre
+      given-names: Mattéo
+    - family-names: Gascon
+      given-names: Mathieu
+    - family-names: El-Mabrouk
+      given-names: Nadia
+  year: 2026
+  notes: "Manuscript under review."
+  url: "https://github.com/UdeM-LBIT/sc1p-scbm"
