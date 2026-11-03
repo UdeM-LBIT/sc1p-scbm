@@ -38,6 +38,7 @@ library.
 ```python
 from sowing import Node
 from synteny_tree import event_matrix, gain_matrix, loss_matrix
+from synteny_tree.leaf_orders import adjacency_rows, index_leaf_orders, read_leaf_orders
 
 tree = Node("ρ").add(Node("u").add(Node("v")).add(Node("w")))
 x = {
@@ -67,6 +68,33 @@ from synteny_tree import event_matrix, is_single_origin, occurrence_expansion
 if not is_single_origin(tree, x):
     M = event_matrix(occurrence_expansion(tree, x))
 ```
+
+Observed orders at leaves are represented as a mapping from leaf names to
+ordered family labels. `read_leaf_orders` reads this mapping from JSON,
+`index_leaf_orders` validates each order against its leaf content and converts
+families to matrix columns, and `adjacency_rows` encodes consecutive pairs as
+ternary constraints. These helpers are independent of the SC1P and SCBM
+optimization objectives.
+
+## InOutParsimony histories
+
+`read_histories` reads the `solutions show` NHX output of InOutParsimony: one
+record per solution, with the content of every node in a `contents`
+annotation. Each history exposes its tree, contents, families and event matrix,
+so the matrix can be passed to `sc1p.solve` or `scbm.solve`. The reported
+InOutParsimony cost is kept for comparison.
+
+```python
+from synteny_tree.nhx import EventCosts, read_histories
+
+(history,) = read_histories("solutions.nhx")
+history.matrix  # event matrix M
+history.inout_cost(EventCosts(loss_open=20, loss_ext=10, gain_open=1))
+```
+
+A history that gains a family on several edges is rejected; apply
+`occurrence_expansion` before building its matrix. The reader needs only
+`sowing`.
 
 ## Citation
 

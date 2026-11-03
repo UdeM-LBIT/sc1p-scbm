@@ -411,6 +411,10 @@ dependencies = [
 [package.optional-dependencies]
 all = [
     { name = "python-sat" },
+    { name = "synteny-tree" },
+]
+history = [
+    { name = "synteny-tree" },
 ]
 sat = [
     { name = "python-sat" },
@@ -421,8 +425,10 @@ requires-dist = [
     { name = "python-sat", marker = "extra == 'all'", specifier = ">=1.9.dev0" },
     { name = "python-sat", marker = "extra == 'sat'", specifier = ">=1.9.dev0" },
     { name = "sc1p", editable = "packages/sc1p" },
+    { name = "synteny-tree", marker = "extra == 'all'", editable = "packages/synteny-tree" },
+    { name = "synteny-tree", marker = "extra == 'history'", editable = "packages/synteny-tree" },
 ]
-provides-extras = ["all", "sat"]
+provides-extras = ["all", "history", "sat"]
 
 [[package]]
 name = "six"

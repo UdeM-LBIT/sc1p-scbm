@@ -42,7 +42,8 @@ pip install \
 
 `scbm` depends on `sc1p`, which is not on PyPI, so both are installed from
 the repository. The `sat` extra pulls in the MaxSAT backend (PySAT/RC2);
-without it, only the brute-force backend is available.
+without it, only the brute-force backend is available. The `history` extra
+pulls in `synteny-tree` for the `scbm history` command.
 
 ## Usage
 
@@ -66,11 +67,18 @@ To build the event matrix of a synteny tree (a tree with the synteny of every
 node), use the [`synteny-tree`](../synteny-tree) package of the same
 repository; its output can be passed directly to `scbm.solve`.
 
+`scbm history` compares one or more single-origin histories read from an
+InOutParsimony NHX output, using `synteny_tree.nhx.read_histories`. It reports
+the InOutParsimony cost and the optimized segment cost of each candidate, and
+optionally trades cost against observed leaf adjacencies. See the repository
+README and [`examples/crispr-class1`](../../examples/crispr-class1).
+
 ## Command line
 
 ```bash
 scbm solve '[[1,0,1],[0,1,1],[1,1,0]]' --solver maxsat
 scbm analyze '[[1,2,0],[0,1,2]]'
+scbm history solutions.nhx --leaf-orders orders.json --mode pareto
 ```
 
 ## Citation

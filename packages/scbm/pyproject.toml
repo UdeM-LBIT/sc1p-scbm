@@ -29,7 +29,8 @@ dependencies = ["sc1p>=0.1.0"]
 
 [project.optional-dependencies]
 sat = ["python-sat>=1.9.dev0"]
-all = ["scbm[sat]"]
+history = ["synteny-tree>=0.1"]
+all = ["scbm[sat,history]"]
 
 [project.scripts]
 scbm = "scbm.cli:main"

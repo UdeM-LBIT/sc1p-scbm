@@ -49,15 +49,21 @@ __all__ = [
     "Family",
     "IncompleteSyntenyTreeError",
     "Labeling",
+    "LeafOrders",
     "Matrix",
     "NotSingleOriginError",
     "X",
+    "adjacency_rows",
     "event_matrix",
     "gain_matrix",
+    "index_leaf_orders",
     "is_single_origin",
     "loss_matrix",
     "occurrence_expansion",
+    "read_leaf_orders",
 ]
+
+from synteny_tree.leaf_orders import LeafOrders, adjacency_rows, index_leaf_orders, read_leaf_orders
 
 
 class IncompleteSyntenyTreeError(ValueError):

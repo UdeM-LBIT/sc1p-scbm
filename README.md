@@ -140,6 +140,54 @@ occurrence-expanded tree of the paper first. See
 [`packages/synteny-tree`](packages/synteny-tree) for the other input formats
 (Newick strings, contents stored on the nodes, labeling functions).
 
+## InOutParsimony histories and observed leaf orders
+
+`scbm history` reads one or more single-origin histories from an
+InOutParsimony `solutions show` NHX output. It reconstructs each event matrix,
+compares the histories, and returns a JSON report. For example:
+
+```bash
+scbm history examples/crispr-class1/crispr-class1-out-lo20-le10-go1.out.nhx \
+  --loss-open 20 --loss-ext 10 --gain-open 1
+```
+
+The event cost is `open × number of blocks + extension × number of genes`:
+this follows InOutParsimony's `open + extension × size` convention for each
+segment. The JSON reports both the cost recorded in the NHX and its recomputed
+InOutParsimony cost, along with the optimized segment cost, block count and
+order. The supplied CRISPR instance has one history, cost 613 before ordering,
+and optimized segment cost 653 (19 blocks). The algorithms compare the supplied
+histories; they do not infer them or guarantee that the file contains all
+optimal InOutParsimony solutions. Multiple-gain histories are rejected until
+occurrence expansion is supported.
+
+Optionally provide `--leaf-orders orders.json`, where the file maps each
+observed leaf name to its complete order of family names, e.g.
+`{"I-C1": ["1", "2", "3\"", "3'", "4", "5", "7", "8"]}`.
+Unspecified leaves have no order constraints. These are unsigned orders:
+each order and its reversal have the same adjacencies by default. Add
+`--respect-leaf-direction` to count an adjacency in the reverse direction as
+broken. The option applies to every supplied leaf; it does not impose the
+orders as hard constraints or add gene orientations. In particular, unordered
+NHX `contents` sets are not interpreted as observed orders.
+
+By default, `--mode pareto` returns one order for every nondominated pair of
+weighted segment cost and number of broken leaf adjacencies, across all
+supplied histories. This uses exact bounded MaxSAT calls, so it also finds
+unsupported Pareto points that a weighted sum may miss. Alternatively,
+`--mode weighted --leaf-weight 5` minimizes segment cost plus five per broken
+adjacency and returns all tied input histories (one representative order per
+history). With no leaf orders both modes select minimum-cost histories.
+The number of MaxSAT calls in Pareto mode grows with the number of observed
+adjacencies; these calls may be expensive on large instances.
+
+For programmatic use, `synteny_tree.nhx.read_histories` reads the NHX records
+and returns their event matrices, which can be passed to `sc1p.solve` or
+`scbm.solve`; it is solver-agnostic. `scbm.leaf_orders.solve_weighted` and
+`scbm.leaf_orders.pareto_front` optimize column orders with observed leaf
+adjacencies, and `scbm.history.compare_histories` compares histories under the
+SCBM objective.
+
 ## Development
 
 ```bash
@@ -176,6 +224,9 @@ uv run --all-extras python examples/crispr-class1/run.py
 It reports the lower bound `17`, the cost `26` of the identity order and the
 optimum `19`. Several orders reach this optimum, so the returned order may
 differ from the one drawn in the paper.
+
+For weighted costs, observed leaf orders, direction, and Pareto comparisons,
+see the [CRISPR example guide](examples/crispr-class1/README.md).
 
 ## Citation
 
