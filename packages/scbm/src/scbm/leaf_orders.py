@@ -22,6 +22,62 @@ class LeafResult:
     history_cost: int
     broken_adjacencies: int
     block_count: int
+    extension_cost: int | None = None
+
+
+def extension_rows(n: int, leaf_orders: Sequence[Sequence[int]]) -> Matrix:
+    """One added loss of the adjacent pair in the context of each observed leaf."""
+    from synteny_tree.leaf_orders import adjacency_rows
+
+    return adjacency_rows(n, leaf_orders)
+
+
+def extension_pareto_front(
+    matrix: Matrix,
+    leaf_orders: Sequence[Sequence[int]] = (),
+    *,
+    row_open: Sequence[int] | None = None,
+    row_ext: Sequence[int] | None = None,
+    ncols: int | None = None,
+    loss_open: int = 1,
+    loss_ext: int = 0,
+    all_optima: bool = False,
+) -> list[LeafResult]:
+    """Pareto front of original history cost and added adjacency loss cost."""
+    for weight in (loss_open, loss_ext):
+        if not isinstance(weight, int) or isinstance(weight, bool) or weight < 0:
+            raise ValueError("loss costs must be non-negative integers")
+    n, opens, extensions, rows = _prepare(matrix, leaf_orders, row_open, row_ext, ncols)
+    if loss_open:
+        results = pareto_front(
+            matrix,
+            leaf_orders,
+            row_open=row_open,
+            row_ext=row_ext,
+            ncols=ncols,
+            all_optima=all_optima,
+        )
+    else:
+        results = _results(
+            matrix,
+            n,
+            opens,
+            extensions,
+            rows,
+            leaf_orders=leaf_orders,
+            allow_reverse=True,
+            all_optima=all_optima,
+        )
+    return [
+        LeafResult(
+            result.permutation,
+            result.history_cost,
+            result.broken_adjacencies,
+            result.block_count,
+            loss_open * (len(rows) + result.broken_adjacencies) + 2 * loss_ext * len(rows),
+        )
+        for result in results
+    ]
 
 
 def _prepare(
@@ -51,7 +107,7 @@ def _prepare(
     return n, opens, extensions, rows
 
 
-def _solve(
+def _results(
     matrix: Matrix,
     n: int,
     opens: list[int],
@@ -62,7 +118,8 @@ def _solve(
     allow_reverse: bool,
     leaf_limit: int | None = None,
     leaf_weight: int = 0,
-) -> LeafResult | None:
+    all_optima: bool = False,
+) -> list[LeafResult]:
     from pysat.card import CardEnc, EncType
     from pysat.examples.rc2 import RC2
 
@@ -136,14 +193,40 @@ def _solve(
                 builder.hard(clause)
             builder.top = card.nv
     if n <= 1:
-        perm = list(range(n))
+        perms = [list(range(n))]
     else:
+        perms = []
         with RC2(builder.wcnf) as rc2:
-            model = rc2.compute()
-        if model is None:
-            return None
-        truth = {abs(value): value > 0 for value in model}
-        perm = extract_perm(truth, n, one_indexed=True)
+            if all_optima:
+                optimum = None
+                for model in rc2.enumerate():
+                    if optimum is None:
+                        optimum = rc2.cost
+                    elif rc2.cost > optimum:
+                        break
+                    truth = {abs(value): value > 0 for value in model}
+                    perms.append(extract_perm(truth, n, one_indexed=True))
+            else:
+                model = rc2.compute()
+                if model is None:
+                    return []
+                truth = {abs(value): value > 0 for value in model}
+                perms.append(extract_perm(truth, n, one_indexed=True))
+    return [
+        _measure(matrix, leaf_rows, opens, extensions, perm, allow_reverse, leaf_orders)
+        for perm in perms
+    ]
+
+
+def _measure(
+    matrix: Matrix,
+    leaf_rows: Matrix,
+    opens: list[int],
+    extensions: list[int],
+    perm: list[int],
+    allow_reverse: bool,
+    leaf_orders: Sequence[Sequence[int]],
+) -> LeafResult:
     blocks = block_cost(matrix, perm)
     history_cost = sum(
         w * block_cost([r], perm) + e * r.count(1) for r, w, e in zip(matrix, opens, extensions)
@@ -158,6 +241,35 @@ def _solve(
             adjacencies = set(pairwise(projected))
             broken += sum(pair not in adjacencies for pair in pairwise(order))
     return LeafResult(tuple(perm), history_cost, broken, blocks)
+
+
+def _weighted(
+    matrix: Matrix,
+    leaf_orders: Sequence[Sequence[int]],
+    row_open: Sequence[int] | None,
+    row_ext: Sequence[int] | None,
+    leaf_weight: int,
+    ncols: int | None,
+    allow_reverse: bool,
+    all_optima: bool,
+) -> list[LeafResult]:
+    if not isinstance(leaf_weight, int) or isinstance(leaf_weight, bool) or leaf_weight < 0:
+        raise ValueError("leaf_weight must be a non-negative integer")
+    n, opens, extensions, rows = _prepare(matrix, leaf_orders, row_open, row_ext, ncols)
+    results = _results(
+        matrix,
+        n,
+        opens,
+        extensions,
+        rows,
+        leaf_orders=leaf_orders,
+        allow_reverse=allow_reverse,
+        leaf_weight=leaf_weight,
+        all_optima=all_optima,
+    )
+    if not results:
+        raise RuntimeError("weighted MaxSAT instance is unexpectedly unsatisfiable")
+    return results
 
 
 def solve_weighted(
@@ -176,22 +288,28 @@ def solve_weighted(
     By default, unsigned leaf orders match up to reversal. If ``allow_reverse``
     is false, an adjacency is respected only in the observed direction.
     """
-    if not isinstance(leaf_weight, int) or isinstance(leaf_weight, bool) or leaf_weight < 0:
-        raise ValueError("leaf_weight must be a non-negative integer")
-    n, opens, extensions, rows = _prepare(matrix, leaf_orders, row_open, row_ext, ncols)
-    result = _solve(
-        matrix,
-        n,
-        opens,
-        extensions,
-        rows,
-        leaf_orders=leaf_orders,
-        allow_reverse=allow_reverse,
-        leaf_weight=leaf_weight,
+    return _weighted(
+        matrix, leaf_orders, row_open, row_ext, leaf_weight, ncols, allow_reverse, False
+    )[0]
+
+
+def solve_weighted_all(
+    matrix: Matrix,
+    leaf_orders: Sequence[Sequence[int]] = (),
+    *,
+    row_open: Sequence[int] | None = None,
+    row_ext: Sequence[int] | None = None,
+    leaf_weight: int = 1,
+    ncols: int | None = None,
+    allow_reverse: bool = True,
+) -> list[LeafResult]:
+    """Optimal orders, one per reversal pair when reversal is equivalent.
+
+    With directed leaf adjacencies, both directions are retained.
+    """
+    return _weighted(
+        matrix, leaf_orders, row_open, row_ext, leaf_weight, ncols, allow_reverse, True
     )
-    if result is None:
-        raise RuntimeError("weighted MaxSAT instance is unexpectedly unsatisfiable")
-    return result
 
 
 def pareto_front(
@@ -202,13 +320,18 @@ def pareto_front(
     row_ext: Sequence[int] | None = None,
     ncols: int | None = None,
     allow_reverse: bool = True,
+    all_optima: bool = False,
 ) -> list[LeafResult]:
-    """Return every nondominated cost pair, one order per pair, using exact bounds."""
+    """Return every nondominated cost pair, one order per pair, using exact bounds.
+
+    With *all_optima*, every order attaining a nondominated pair is returned,
+    once per reversal pair when reversal is equivalent.
+    """
     n, opens, extensions, rows = _prepare(matrix, leaf_orders, row_open, row_ext, ncols)
     front: list[LeafResult] = []
     best_cost: int | None = None
     for bound in range(len(rows) + 1):
-        result = _solve(
+        single = _results(
             matrix,
             n,
             opens,
@@ -218,7 +341,26 @@ def pareto_front(
             allow_reverse=allow_reverse,
             leaf_limit=bound,
         )
-        if result is not None and (best_cost is None or result.history_cost < best_cost):
-            front.append(result)
-            best_cost = result.history_cost
+        if not single:
+            continue
+        cost = single[0].history_cost
+        if best_cost is not None and cost >= best_cost:
+            continue
+        best_cost = cost
+        results = (
+            _results(
+                matrix,
+                n,
+                opens,
+                extensions,
+                rows,
+                leaf_orders=leaf_orders,
+                allow_reverse=allow_reverse,
+                leaf_limit=bound,
+                all_optima=True,
+            )
+            if all_optima
+            else single
+        )
+        front.extend(result for result in results if result.history_cost == cost)
     return front

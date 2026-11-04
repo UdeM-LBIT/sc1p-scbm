@@ -40,9 +40,10 @@ uv sync --all-extras
 ```
 
 or, with pip, `pip install ./packages/sc1p[sat] ./packages/scbm[sat]
-./packages/synteny-tree`. The `sat` extra pulls in PySAT, and
+./packages/synteny-tree`. The `sat` extra pulls in PySAT,
 `synteny-tree` depends on the [sowing](https://github.com/UdeM-LBIT/sowing)
-tree library. Backends are imported on first use, so `scbm.score.block_cost`
+tree library, and the `cli` extra adds Rich-formatted terminal output for the
+`scbm` command. Backends are imported on first use, so `scbm.score.block_cost`
 needs neither.
 
 ## Usage
@@ -98,7 +99,8 @@ sc1p.solve(M, solver="mine")
 
 ## Command line
 
-Both commands print JSON.
+`sc1p` prints JSON. `scbm` prints a Rich report on a terminal and JSON when its
+output is redirected; `--format json|rich|auto` forces either format.
 
 ```bash
 sc1p '[[1,2,0],[0,1,2]]'                         # {"satisfiable": ..., "permutation": ...}
@@ -144,7 +146,10 @@ occurrence-expanded tree of the paper first. See
 
 `scbm history` reads one or more single-origin histories from an
 InOutParsimony `solutions show` NHX output. It reconstructs each event matrix,
-compares the histories, and returns a JSON report. For example:
+compares the histories, and returns a JSON report. Pass `--tree` to append the
+history tree (node names, family contents, losses and gains), and `--all` to
+enumerate orders attaining each Pareto pair. When reversal is equivalent, each
+order and its reverse are represented once. For example:
 
 ```bash
 scbm history examples/crispr-class1/crispr-class1-out-lo20-le10-go1.out.nhx \
@@ -155,8 +160,9 @@ The event cost is `open × number of blocks + extension × number of genes`:
 this follows InOutParsimony's `open + extension × size` convention for each
 segment. The JSON reports both the cost recorded in the NHX and its recomputed
 InOutParsimony cost, along with the optimized segment cost, block count and
-order. The supplied CRISPR instance has one history, cost 613 before ordering,
-and optimized segment cost 653 (19 blocks). The algorithms compare the supplied
+order. Pareto results also report `solutions`, the number of orders attaining
+each pair. The supplied CRISPR instance has one history, cost 574 before
+ordering, and optimized segment cost 574 (18 blocks). The algorithms compare the supplied
 histories; they do not infer them or guarantee that the file contains all
 optimal InOutParsimony solutions. Multiple-gain histories are rejected until
 occurrence expansion is supported.

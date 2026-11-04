@@ -65,8 +65,4 @@ def solve_all(matrix: Matrix, *, solver: str = "auto") -> list[Permutation]:
     if n <= 1:
         return [list(range(n))]
     best = implementation.solve(matrix).cost
-    return [
-        list(perm)
-        for perm in permutations(range(n))
-        if block_cost(matrix, list(perm)) == best
-    ]
+    return [list(perm) for perm in permutations(range(n)) if block_cost(matrix, list(perm)) == best]

@@ -1,0 +1,404 @@
+────────────────────────────────────────────────────────── SCBM / HISTORY ANALYSIS · PARETO ──────────────────────────────────────────────────────────
+cost model  loss open 1 · loss ext 1 · gain open 1 · gain ext 0
+history 1.1 (1)  ✓ cost verified: 43 · 11 families · 18 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvI-III-out-lo1-le1-go1.nhx
+history 1.2 (2)  ✓ cost verified: 43 · 11 families · 19 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvI-III-out-lo1-le1-go1.nhx
+history 1.3 (3)  ✓ cost verified: 43 · 11 families · 19 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvI-III-out-lo1-le1-go1.nhx
+history 1.4 (4)  ✓ cost verified: 43 · 11 families · 20 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvI-III-out-lo1-le1-go1.nhx
+history 1.5 (5)  ✓ cost verified: 43 · 11 families · 17 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvI-III-out-lo1-le1-go1.nhx
+history 1.6 (6)  ✓ cost verified: 43 · 11 families · 18 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvI-III-out-lo1-le1-go1.nhx
+history 1.7 (7)  ✓ cost verified: 43 · 11 families · 18 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvI-III-out-lo1-le1-go1.nhx
+history 1.8 (8)  ✓ cost verified: 43 · 11 families · 19 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvI-III-out-lo1-le1-go1.nhx
+history 2.1 (1)  ✓ cost verified: 45 · 11 families · 18 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvI-IV-out-lo1-le1-go1.nhx
+history 2.2 (2)  ✓ cost verified: 45 · 11 families · 19 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvI-IV-out-lo1-le1-go1.nhx
+history 2.3 (3)  ✓ cost verified: 45 · 11 families · 19 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvI-IV-out-lo1-le1-go1.nhx
+history 2.4 (4)  ✓ cost verified: 45 · 11 families · 20 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvI-IV-out-lo1-le1-go1.nhx
+history 2.5 (5)  ✓ cost verified: 45 · 11 families · 17 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvI-IV-out-lo1-le1-go1.nhx
+history 2.6 (6)  ✓ cost verified: 45 · 11 families · 18 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvI-IV-out-lo1-le1-go1.nhx
+history 2.7 (7)  ✓ cost verified: 45 · 11 families · 18 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvI-IV-out-lo1-le1-go1.nhx
+history 2.8 (8)  ✓ cost verified: 45 · 11 families · 19 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvI-IV-out-lo1-le1-go1.nhx
+history 3.1 (1)  ✓ cost verified: 46 · 11 families · 18 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvIII-IV-out-lo1-le1-go1.nhx
+history 3.2 (2)  ✓ cost verified: 46 · 11 families · 19 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvIII-IV-out-lo1-le1-go1.nhx
+history 3.3 (3)  ✓ cost verified: 46 · 11 families · 19 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvIII-IV-out-lo1-le1-go1.nhx
+history 3.4 (4)  ✓ cost verified: 46 · 11 families · 20 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvIII-IV-out-lo1-le1-go1.nhx
+history 3.5 (5)  ✓ cost verified: 46 · 11 families · 17 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvIII-IV-out-lo1-le1-go1.nhx
+history 3.6 (6)  ✓ cost verified: 46 · 11 families · 18 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvIII-IV-out-lo1-le1-go1.nhx
+history 3.7 (7)  ✓ cost verified: 46 · 11 families · 18 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvIII-IV-out-lo1-le1-go1.nhx
+history 3.8 (8)  ✓ cost verified: 46 · 11 families · 19 events · leaf reversal enabled
+  file: results/pareto-24/crispr-class1-resolvIII-IV-out-lo1-le1-go1.nhx
+observed leaf orders  15 leaves
+PARETO FRONT 3 points · 5 history results · 11 orders
+#  history  history cost  broken adjacencies  orders at point
+1  1.3 (3)            46                  22                3
+2  1.3 (3)            44                  23                1
+3  1.4 (4)            46                  22                3
+4  1.4 (4)            44                  23                3
+5  1.4 (4)            43                  26                1
+
+FAMILY ORDERS BY RESULT
+Each group corresponds to a numbered row above.
+Result 1 · history 1.3 (3)  3 shown
+  1.  10  3"  3'  8  11  7  5  6  4  1  2
+  2.  3"  3'  10  8  11  7  5  6  4  1  2
+  3.  3"  3'  8  10  11  7  5  6  4  1  2
+Result 2 · history 1.3 (3)  1 shown
+  1.  8  11  7  5  6  4  1  2  10  3"  3'
+Result 3 · history 1.4 (4)  3 shown
+  1.  10  3"  3'  8  11  7  5  6  4  1  2
+  2.  3"  3'  10  8  11  7  5  6  4  1  2
+  3.  3"  3'  8  10  11  7  5  6  4  1  2
+Result 4 · history 1.4 (4)  3 shown
+  1.  8  11  7  5  6  4  1  2  10  3"  3'
+  2.  6  4  1  2  3"  3'  10  8  11  7  5
+  3.  6  4  1  2  10  3"  3'  8  11  7  5
+Result 5 · history 1.4 (4)  1 shown
+  1.  6  4  1  2  10  3"  3'  5  7  11  8
+
+CONSENSUS ORDERS 324
+Consensus of minimum-history-cost orders, computed without leaf orders; not necessarily orders on the Pareto front.
+history 1.1 (1) #1  7  8  11  10  5  6  1  2  3"  3'  4
+history 1.1 (1) #2  7  8  11  10  5  6  1  2  3'  3"  4
+history 1.1 (1) #3  7  8  11  10  5  6  2  1  3"  3'  4
+history 1.1 (1) #4  7  8  11  10  5  6  2  1  3'  3"  4
+history 1.1 (1) #5  4  7  8  11  10  5  6  1  2  3"  3'
+history 1.1 (1) #6  4  7  8  11  10  5  6  1  2  3'  3"
+history 1.1 (1) #7  4  7  8  11  10  5  6  2  1  3"  3'
+history 1.1 (1) #8  4  7  8  11  10  5  6  2  1  3'  3"
+history 1.2 (2) #1  4  3"  3'  1  2  6  7  5  10  11  8
+history 1.2 (2) #2  4  3"  3'  2  1  6  7  5  10  11  8
+history 1.2 (2) #3  4  3'  3"  1  2  6  7  5  10  11  8
+history 1.2 (2) #4  4  3'  3"  2  1  6  7  5  10  11  8
+history 1.3 (3) #1  11  7  8  6  5  10  4  3'  3"  1  2
+history 1.3 (3) #2  11  7  8  6  5  10  4  3'  3"  2  1
+history 1.3 (3) #3  11  7  8  6  5  10  4  3"  3'  1  2
+history 1.3 (3) #4  11  7  8  6  5  10  4  3"  3'  2  1
+history 1.3 (3) #5  11  7  8  6  5  10  4  1  2  3'  3"
+history 1.3 (3) #6  11  7  8  6  5  10  4  1  2  3"  3'
+history 1.3 (3) #7  11  7  8  6  5  10  4  2  1  3'  3"
+history 1.3 (3) #8  11  7  8  6  5  10  4  2  1  3"  3'
+history 1.3 (3) #9  3'  3"  1  2  4  11  7  8  6  5  10
+history 1.3 (3) #10  3'  3"  2  1  4  11  7  8  6  5  10
+history 1.3 (3) #11  3"  3'  1  2  4  11  7  8  6  5  10
+history 1.3 (3) #12  3"  3'  2  1  4  11  7  8  6  5  10
+history 1.3 (3) #13  1  2  3'  3"  4  11  7  8  6  5  10
+history 1.3 (3) #14  1  2  3"  3'  4  11  7  8  6  5  10
+history 1.3 (3) #15  2  1  3'  3"  4  11  7  8  6  5  10
+history 1.3 (3) #16  2  1  3"  3'  4  11  7  8  6  5  10
+history 1.4 (4) #1  11  7  6  8  5  10  1  2  3"  3'  4
+history 1.4 (4) #2  11  7  6  8  5  10  1  2  3'  3"  4
+history 1.4 (4) #3  11  7  6  8  5  10  2  1  3"  3'  4
+history 1.4 (4) #4  11  7  6  8  5  10  2  1  3'  3"  4
+history 1.4 (4) #5  7  11  6  8  5  10  1  2  3"  3'  4
+history 1.4 (4) #6  7  11  6  8  5  10  1  2  3'  3"  4
+history 1.4 (4) #7  7  11  6  8  5  10  2  1  3"  3'  4
+history 1.4 (4) #8  7  11  6  8  5  10  2  1  3'  3"  4
+history 1.4 (4) #9  6  11  7  8  5  10  1  2  3"  3'  4
+history 1.4 (4) #10  6  11  7  8  5  10  1  2  3'  3"  4
+history 1.4 (4) #11  6  11  7  8  5  10  2  1  3"  3'  4
+history 1.4 (4) #12  6  11  7  8  5  10  2  1  3'  3"  4
+history 1.4 (4) #13  6  8  11  7  5  10  1  2  3"  3'  4
+history 1.4 (4) #14  6  8  11  7  5  10  1  2  3'  3"  4
+history 1.4 (4) #15  6  8  11  7  5  10  2  1  3"  3'  4
+history 1.4 (4) #16  6  8  11  7  5  10  2  1  3'  3"  4
+history 1.4 (4) #17  6  8  7  11  5  10  1  2  3"  3'  4
+history 1.4 (4) #18  6  8  7  11  5  10  1  2  3'  3"  4
+history 1.4 (4) #19  6  8  7  11  5  10  2  1  3"  3'  4
+history 1.4 (4) #20  6  8  7  11  5  10  2  1  3'  3"  4
+history 1.4 (4) #21  6  7  11  8  5  10  1  2  3"  3'  4
+history 1.4 (4) #22  6  7  11  8  5  10  1  2  3'  3"  4
+history 1.4 (4) #23  6  7  11  8  5  10  2  1  3"  3'  4
+history 1.4 (4) #24  6  7  11  8  5  10  2  1  3'  3"  4
+history 1.4 (4) #25  4  11  7  6  8  5  10  1  2  3"  3'
+history 1.4 (4) #26  4  11  7  6  8  5  10  1  2  3'  3"
+history 1.4 (4) #27  4  11  7  6  8  5  10  2  1  3"  3'
+history 1.4 (4) #28  4  11  7  6  8  5  10  2  1  3'  3"
+history 1.4 (4) #29  4  7  11  6  8  5  10  1  2  3"  3'
+history 1.4 (4) #30  4  7  11  6  8  5  10  1  2  3'  3"
+history 1.4 (4) #31  4  7  11  6  8  5  10  2  1  3"  3'
+history 1.4 (4) #32  4  7  11  6  8  5  10  2  1  3'  3"
+history 1.4 (4) #33  4  6  11  7  8  5  10  1  2  3"  3'
+history 1.4 (4) #34  4  6  11  7  8  5  10  1  2  3'  3"
+history 1.4 (4) #35  4  6  11  7  8  5  10  2  1  3"  3'
+history 1.4 (4) #36  4  6  11  7  8  5  10  2  1  3'  3"
+history 1.4 (4) #37  4  6  8  11  7  5  10  1  2  3"  3'
+history 1.4 (4) #38  4  6  8  11  7  5  10  1  2  3'  3"
+history 1.4 (4) #39  4  6  8  11  7  5  10  2  1  3"  3'
+history 1.4 (4) #40  4  6  8  11  7  5  10  2  1  3'  3"
+history 1.4 (4) #41  4  6  8  7  11  5  10  1  2  3"  3'
+history 1.4 (4) #42  4  6  8  7  11  5  10  1  2  3'  3"
+history 1.4 (4) #43  4  6  8  7  11  5  10  2  1  3"  3'
+history 1.4 (4) #44  4  6  8  7  11  5  10  2  1  3'  3"
+history 1.4 (4) #45  4  6  7  11  8  5  10  1  2  3"  3'
+history 1.4 (4) #46  4  6  7  11  8  5  10  1  2  3'  3"
+history 1.4 (4) #47  4  6  7  11  8  5  10  2  1  3"  3'
+history 1.4 (4) #48  4  6  7  11  8  5  10  2  1  3'  3"
+history 1.5 (5) #1  1  2  6  5  7  8  11  10  4  3"  3'
+history 1.5 (5) #2  1  2  6  5  7  8  11  10  4  3'  3"
+history 1.5 (5) #3  2  1  6  5  7  8  11  10  4  3"  3'
+history 1.5 (5) #4  2  1  6  5  7  8  11  10  4  3'  3"
+history 1.6 (6) #1  11  8  7  5  10  4  3"  3'  1  2  6
+history 1.6 (6) #2  11  8  7  5  10  4  3"  3'  2  1  6
+history 1.6 (6) #3  11  8  7  5  10  4  3'  3"  1  2  6
+history 1.6 (6) #4  11  8  7  5  10  4  3'  3"  2  1  6
+history 1.7 (7) #1  11  7  8  5  6  1  2  10  4  3"  3'
+history 1.7 (7) #2  11  7  8  5  6  1  2  10  4  3'  3"
+history 1.7 (7) #3  11  7  8  5  6  2  1  10  4  3"  3'
+history 1.7 (7) #4  11  7  8  5  6  2  1  10  4  3'  3"
+history 1.7 (7) #5  7  11  8  5  6  1  2  10  4  3"  3'
+history 1.7 (7) #6  7  11  8  5  6  1  2  10  4  3'  3"
+history 1.7 (7) #7  7  11  8  5  6  2  1  10  4  3"  3'
+history 1.7 (7) #8  7  11  8  5  6  2  1  10  4  3'  3"
+history 1.8 (8) #1  3"  3'  4  10  5  11  7  8  6  1  2
+history 1.8 (8) #2  3"  3'  4  10  5  11  7  8  6  2  1
+history 1.8 (8) #3  3"  3'  4  10  5  8  11  7  6  1  2
+history 1.8 (8) #4  3"  3'  4  10  5  8  11  7  6  2  1
+history 1.8 (8) #5  3"  3'  4  10  5  8  7  11  6  1  2
+history 1.8 (8) #6  3"  3'  4  10  5  8  7  11  6  2  1
+history 1.8 (8) #7  3"  3'  4  10  5  7  11  8  6  1  2
+history 1.8 (8) #8  3"  3'  4  10  5  7  11  8  6  2  1
+history 1.8 (8) #9  3'  3"  4  10  5  11  7  8  6  1  2
+history 1.8 (8) #10  3'  3"  4  10  5  11  7  8  6  2  1
+history 1.8 (8) #11  3'  3"  4  10  5  8  11  7  6  1  2
+history 1.8 (8) #12  3'  3"  4  10  5  8  11  7  6  2  1
+history 1.8 (8) #13  3'  3"  4  10  5  8  7  11  6  1  2
+history 1.8 (8) #14  3'  3"  4  10  5  8  7  11  6  2  1
+history 1.8 (8) #15  3'  3"  4  10  5  7  11  8  6  1  2
+history 1.8 (8) #16  3'  3"  4  10  5  7  11  8  6  2  1
+history 2.1 (1) #1  4  3"  3'  1  2  6  5  10  11  8  7
+history 2.1 (1) #2  4  3"  3'  2  1  6  5  10  11  8  7
+history 2.1 (1) #3  4  3'  3"  1  2  6  5  10  11  8  7
+history 2.1 (1) #4  4  3'  3"  2  1  6  5  10  11  8  7
+history 2.1 (1) #5  4  7  8  11  10  5  6  1  2  3"  3'
+history 2.1 (1) #6  4  7  8  11  10  5  6  1  2  3'  3"
+history 2.1 (1) #7  4  7  8  11  10  5  6  2  1  3"  3'
+history 2.1 (1) #8  4  7  8  11  10  5  6  2  1  3'  3"
+history 2.2 (2) #1  4  3'  3"  1  2  6  7  5  10  11  8
+history 2.2 (2) #2  4  3'  3"  2  1  6  7  5  10  11  8
+history 2.2 (2) #3  4  3"  3'  1  2  6  7  5  10  11  8
+history 2.2 (2) #4  4  3"  3'  2  1  6  7  5  10  11  8
+history 2.3 (3) #1  11  7  8  6  5  10  4  3'  3"  1  2
+history 2.3 (3) #2  11  7  8  6  5  10  4  3'  3"  2  1
+history 2.3 (3) #3  11  7  8  6  5  10  4  3"  3'  1  2
+history 2.3 (3) #4  11  7  8  6  5  10  4  3"  3'  2  1
+history 2.3 (3) #5  11  7  8  6  5  10  4  1  2  3'  3"
+history 2.3 (3) #6  11  7  8  6  5  10  4  1  2  3"  3'
+history 2.3 (3) #7  11  7  8  6  5  10  4  2  1  3'  3"
+history 2.3 (3) #8  11  7  8  6  5  10  4  2  1  3"  3'
+history 2.3 (3) #9  3'  3"  1  2  4  11  7  8  6  5  10
+history 2.3 (3) #10  3'  3"  2  1  4  11  7  8  6  5  10
+history 2.3 (3) #11  3"  3'  1  2  4  11  7  8  6  5  10
+history 2.3 (3) #12  3"  3'  2  1  4  11  7  8  6  5  10
+history 2.3 (3) #13  1  2  3'  3"  4  11  7  8  6  5  10
+history 2.3 (3) #14  1  2  3"  3'  4  11  7  8  6  5  10
+history 2.3 (3) #15  2  1  3'  3"  4  11  7  8  6  5  10
+history 2.3 (3) #16  2  1  3"  3'  4  11  7  8  6  5  10
+history 2.4 (4) #1  11  7  6  8  5  10  1  2  3'  3"  4
+history 2.4 (4) #2  11  7  6  8  5  10  1  2  3"  3'  4
+history 2.4 (4) #3  11  7  6  8  5  10  2  1  3'  3"  4
+history 2.4 (4) #4  11  7  6  8  5  10  2  1  3"  3'  4
+history 2.4 (4) #5  7  11  6  8  5  10  1  2  3'  3"  4
+history 2.4 (4) #6  7  11  6  8  5  10  1  2  3"  3'  4
+history 2.4 (4) #7  7  11  6  8  5  10  2  1  3'  3"  4
+history 2.4 (4) #8  7  11  6  8  5  10  2  1  3"  3'  4
+history 2.4 (4) #9  6  11  7  8  5  10  1  2  3'  3"  4
+history 2.4 (4) #10  6  11  7  8  5  10  1  2  3"  3'  4
+history 2.4 (4) #11  6  11  7  8  5  10  2  1  3'  3"  4
+history 2.4 (4) #12  6  11  7  8  5  10  2  1  3"  3'  4
+history 2.4 (4) #13  6  8  11  7  5  10  1  2  3'  3"  4
+history 2.4 (4) #14  6  8  11  7  5  10  1  2  3"  3'  4
+history 2.4 (4) #15  6  8  11  7  5  10  2  1  3'  3"  4
+history 2.4 (4) #16  6  8  11  7  5  10  2  1  3"  3'  4
+history 2.4 (4) #17  6  8  7  11  5  10  1  2  3'  3"  4
+history 2.4 (4) #18  6  8  7  11  5  10  1  2  3"  3'  4
+history 2.4 (4) #19  6  8  7  11  5  10  2  1  3'  3"  4
+history 2.4 (4) #20  6  8  7  11  5  10  2  1  3"  3'  4
+history 2.4 (4) #21  6  7  11  8  5  10  1  2  3'  3"  4
+history 2.4 (4) #22  6  7  11  8  5  10  1  2  3"  3'  4
+history 2.4 (4) #23  6  7  11  8  5  10  2  1  3'  3"  4
+history 2.4 (4) #24  6  7  11  8  5  10  2  1  3"  3'  4
+history 2.4 (4) #25  4  11  7  6  8  5  10  1  2  3'  3"
+history 2.4 (4) #26  4  11  7  6  8  5  10  1  2  3"  3'
+history 2.4 (4) #27  4  11  7  6  8  5  10  2  1  3'  3"
+history 2.4 (4) #28  4  11  7  6  8  5  10  2  1  3"  3'
+history 2.4 (4) #29  4  7  11  6  8  5  10  1  2  3'  3"
+history 2.4 (4) #30  4  7  11  6  8  5  10  1  2  3"  3'
+history 2.4 (4) #31  4  7  11  6  8  5  10  2  1  3'  3"
+history 2.4 (4) #32  4  7  11  6  8  5  10  2  1  3"  3'
+history 2.4 (4) #33  4  6  11  7  8  5  10  1  2  3'  3"
+history 2.4 (4) #34  4  6  11  7  8  5  10  1  2  3"  3'
+history 2.4 (4) #35  4  6  11  7  8  5  10  2  1  3'  3"
+history 2.4 (4) #36  4  6  11  7  8  5  10  2  1  3"  3'
+history 2.4 (4) #37  4  6  8  11  7  5  10  1  2  3'  3"
+history 2.4 (4) #38  4  6  8  11  7  5  10  1  2  3"  3'
+history 2.4 (4) #39  4  6  8  11  7  5  10  2  1  3'  3"
+history 2.4 (4) #40  4  6  8  11  7  5  10  2  1  3"  3'
+history 2.4 (4) #41  4  6  8  7  11  5  10  1  2  3'  3"
+history 2.4 (4) #42  4  6  8  7  11  5  10  1  2  3"  3'
+history 2.4 (4) #43  4  6  8  7  11  5  10  2  1  3'  3"
+history 2.4 (4) #44  4  6  8  7  11  5  10  2  1  3"  3'
+history 2.4 (4) #45  4  6  7  11  8  5  10  1  2  3'  3"
+history 2.4 (4) #46  4  6  7  11  8  5  10  1  2  3"  3'
+history 2.4 (4) #47  4  6  7  11  8  5  10  2  1  3'  3"
+history 2.4 (4) #48  4  6  7  11  8  5  10  2  1  3"  3'
+history 2.5 (5) #1  1  2  6  5  7  8  11  10  4  3"  3'
+history 2.5 (5) #2  1  2  6  5  7  8  11  10  4  3'  3"
+history 2.5 (5) #3  2  1  6  5  7  8  11  10  4  3"  3'
+history 2.5 (5) #4  2  1  6  5  7  8  11  10  4  3'  3"
+history 2.6 (6) #1  6  1  2  3'  3"  4  10  5  7  8  11
+history 2.6 (6) #2  6  1  2  3"  3'  4  10  5  7  8  11
+history 2.6 (6) #3  6  2  1  3'  3"  4  10  5  7  8  11
+history 2.6 (6) #4  6  2  1  3"  3'  4  10  5  7  8  11
+history 2.7 (7) #1  11  7  8  5  6  1  2  10  4  3"  3'
+history 2.7 (7) #2  11  7  8  5  6  1  2  10  4  3'  3"
+history 2.7 (7) #3  11  7  8  5  6  2  1  10  4  3"  3'
+history 2.7 (7) #4  11  7  8  5  6  2  1  10  4  3'  3"
+history 2.7 (7) #5  7  11  8  5  6  1  2  10  4  3"  3'
+history 2.7 (7) #6  7  11  8  5  6  1  2  10  4  3'  3"
+history 2.7 (7) #7  7  11  8  5  6  2  1  10  4  3"  3'
+history 2.7 (7) #8  7  11  8  5  6  2  1  10  4  3'  3"
+history 2.8 (8) #1  1  2  6  11  7  8  5  10  4  3"  3'
+history 2.8 (8) #2  1  2  6  11  7  8  5  10  4  3'  3"
+history 2.8 (8) #3  1  2  6  8  11  7  5  10  4  3"  3'
+history 2.8 (8) #4  1  2  6  8  11  7  5  10  4  3'  3"
+history 2.8 (8) #5  1  2  6  8  7  11  5  10  4  3"  3'
+history 2.8 (8) #6  1  2  6  8  7  11  5  10  4  3'  3"
+history 2.8 (8) #7  1  2  6  7  11  8  5  10  4  3"  3'
+history 2.8 (8) #8  1  2  6  7  11  8  5  10  4  3'  3"
+history 2.8 (8) #9  2  1  6  11  7  8  5  10  4  3"  3'
+history 2.8 (8) #10  2  1  6  11  7  8  5  10  4  3'  3"
+history 2.8 (8) #11  2  1  6  8  11  7  5  10  4  3"  3'
+history 2.8 (8) #12  2  1  6  8  11  7  5  10  4  3'  3"
+history 2.8 (8) #13  2  1  6  8  7  11  5  10  4  3"  3'
+history 2.8 (8) #14  2  1  6  8  7  11  5  10  4  3'  3"
+history 2.8 (8) #15  2  1  6  7  11  8  5  10  4  3"  3'
+history 2.8 (8) #16  2  1  6  7  11  8  5  10  4  3'  3"
+history 3.1 (1) #1  7  8  11  10  5  6  1  2  3"  3'  4
+history 3.1 (1) #2  7  8  11  10  5  6  1  2  3'  3"  4
+history 3.1 (1) #3  7  8  11  10  5  6  2  1  3"  3'  4
+history 3.1 (1) #4  7  8  11  10  5  6  2  1  3'  3"  4
+history 3.1 (1) #5  4  7  8  11  10  5  6  1  2  3"  3'
+history 3.1 (1) #6  4  7  8  11  10  5  6  1  2  3'  3"
+history 3.1 (1) #7  4  7  8  11  10  5  6  2  1  3"  3'
+history 3.1 (1) #8  4  7  8  11  10  5  6  2  1  3'  3"
+history 3.2 (2) #1  4  3"  3'  1  2  6  7  5  10  11  8
+history 3.2 (2) #2  4  3"  3'  2  1  6  7  5  10  11  8
+history 3.2 (2) #3  4  3'  3"  1  2  6  7  5  10  11  8
+history 3.2 (2) #4  4  3'  3"  2  1  6  7  5  10  11  8
+history 3.3 (3) #1  11  7  8  6  5  10  4  3'  3"  1  2
+history 3.3 (3) #2  11  7  8  6  5  10  4  3'  3"  2  1
+history 3.3 (3) #3  11  7  8  6  5  10  4  3"  3'  1  2
+history 3.3 (3) #4  11  7  8  6  5  10  4  3"  3'  2  1
+history 3.3 (3) #5  11  7  8  6  5  10  4  1  2  3'  3"
+history 3.3 (3) #6  11  7  8  6  5  10  4  1  2  3"  3'
+history 3.3 (3) #7  11  7  8  6  5  10  4  2  1  3'  3"
+history 3.3 (3) #8  11  7  8  6  5  10  4  2  1  3"  3'
+history 3.3 (3) #9  3'  3"  1  2  4  11  7  8  6  5  10
+history 3.3 (3) #10  3'  3"  2  1  4  11  7  8  6  5  10
+history 3.3 (3) #11  3"  3'  1  2  4  11  7  8  6  5  10
+history 3.3 (3) #12  3"  3'  2  1  4  11  7  8  6  5  10
+history 3.3 (3) #13  1  2  3'  3"  4  11  7  8  6  5  10
+history 3.3 (3) #14  1  2  3"  3'  4  11  7  8  6  5  10
+history 3.3 (3) #15  2  1  3'  3"  4  11  7  8  6  5  10
+history 3.3 (3) #16  2  1  3"  3'  4  11  7  8  6  5  10
+history 3.4 (4) #1  11  7  6  8  5  10  1  2  3"  3'  4
+history 3.4 (4) #2  11  7  6  8  5  10  1  2  3'  3"  4
+history 3.4 (4) #3  11  7  6  8  5  10  2  1  3"  3'  4
+history 3.4 (4) #4  11  7  6  8  5  10  2  1  3'  3"  4
+history 3.4 (4) #5  7  11  6  8  5  10  1  2  3"  3'  4
+history 3.4 (4) #6  7  11  6  8  5  10  1  2  3'  3"  4
+history 3.4 (4) #7  7  11  6  8  5  10  2  1  3"  3'  4
+history 3.4 (4) #8  7  11  6  8  5  10  2  1  3'  3"  4
+history 3.4 (4) #9  6  11  7  8  5  10  1  2  3"  3'  4
+history 3.4 (4) #10  6  11  7  8  5  10  1  2  3'  3"  4
+history 3.4 (4) #11  6  11  7  8  5  10  2  1  3"  3'  4
+history 3.4 (4) #12  6  11  7  8  5  10  2  1  3'  3"  4
+history 3.4 (4) #13  6  8  11  7  5  10  1  2  3"  3'  4
+history 3.4 (4) #14  6  8  11  7  5  10  1  2  3'  3"  4
+history 3.4 (4) #15  6  8  11  7  5  10  2  1  3"  3'  4
+history 3.4 (4) #16  6  8  11  7  5  10  2  1  3'  3"  4
+history 3.4 (4) #17  6  8  7  11  5  10  1  2  3"  3'  4
+history 3.4 (4) #18  6  8  7  11  5  10  1  2  3'  3"  4
+history 3.4 (4) #19  6  8  7  11  5  10  2  1  3"  3'  4
+history 3.4 (4) #20  6  8  7  11  5  10  2  1  3'  3"  4
+history 3.4 (4) #21  6  7  11  8  5  10  1  2  3"  3'  4
+history 3.4 (4) #22  6  7  11  8  5  10  1  2  3'  3"  4
+history 3.4 (4) #23  6  7  11  8  5  10  2  1  3"  3'  4
+history 3.4 (4) #24  6  7  11  8  5  10  2  1  3'  3"  4
+history 3.4 (4) #25  4  11  7  6  8  5  10  1  2  3"  3'
+history 3.4 (4) #26  4  11  7  6  8  5  10  1  2  3'  3"
+history 3.4 (4) #27  4  11  7  6  8  5  10  2  1  3"  3'
+history 3.4 (4) #28  4  11  7  6  8  5  10  2  1  3'  3"
+history 3.4 (4) #29  4  7  11  6  8  5  10  1  2  3"  3'
+history 3.4 (4) #30  4  7  11  6  8  5  10  1  2  3'  3"
+history 3.4 (4) #31  4  7  11  6  8  5  10  2  1  3"  3'
+history 3.4 (4) #32  4  7  11  6  8  5  10  2  1  3'  3"
+history 3.4 (4) #33  4  6  11  7  8  5  10  1  2  3"  3'
+history 3.4 (4) #34  4  6  11  7  8  5  10  1  2  3'  3"
+history 3.4 (4) #35  4  6  11  7  8  5  10  2  1  3"  3'
+history 3.4 (4) #36  4  6  11  7  8  5  10  2  1  3'  3"
+history 3.4 (4) #37  4  6  8  11  7  5  10  1  2  3"  3'
+history 3.4 (4) #38  4  6  8  11  7  5  10  1  2  3'  3"
+history 3.4 (4) #39  4  6  8  11  7  5  10  2  1  3"  3'
+history 3.4 (4) #40  4  6  8  11  7  5  10  2  1  3'  3"
+history 3.4 (4) #41  4  6  8  7  11  5  10  1  2  3"  3'
+history 3.4 (4) #42  4  6  8  7  11  5  10  1  2  3'  3"
+history 3.4 (4) #43  4  6  8  7  11  5  10  2  1  3"  3'
+history 3.4 (4) #44  4  6  8  7  11  5  10  2  1  3'  3"
+history 3.4 (4) #45  4  6  7  11  8  5  10  1  2  3"  3'
+history 3.4 (4) #46  4  6  7  11  8  5  10  1  2  3'  3"
+history 3.4 (4) #47  4  6  7  11  8  5  10  2  1  3"  3'
+history 3.4 (4) #48  4  6  7  11  8  5  10  2  1  3'  3"
+history 3.5 (5) #1  1  2  6  5  7  8  11  10  4  3"  3'
+history 3.5 (5) #2  1  2  6  5  7  8  11  10  4  3'  3"
+history 3.5 (5) #3  2  1  6  5  7  8  11  10  4  3"  3'
+history 3.5 (5) #4  2  1  6  5  7  8  11  10  4  3'  3"
+history 3.6 (6) #1  11  8  7  5  10  4  3"  3'  1  2  6
+history 3.6 (6) #2  11  8  7  5  10  4  3"  3'  2  1  6
+history 3.6 (6) #3  11  8  7  5  10  4  3'  3"  1  2  6
+history 3.6 (6) #4  11  8  7  5  10  4  3'  3"  2  1  6
+history 3.7 (7) #1  11  7  8  5  6  1  2  10  4  3"  3'
+history 3.7 (7) #2  11  7  8  5  6  1  2  10  4  3'  3"
+history 3.7 (7) #3  11  7  8  5  6  2  1  10  4  3"  3'
+history 3.7 (7) #4  11  7  8  5  6  2  1  10  4  3'  3"
+history 3.7 (7) #5  7  11  8  5  6  1  2  10  4  3"  3'
+history 3.7 (7) #6  7  11  8  5  6  1  2  10  4  3'  3"
+history 3.7 (7) #7  7  11  8  5  6  2  1  10  4  3"  3'
+history 3.7 (7) #8  7  11  8  5  6  2  1  10  4  3'  3"
+history 3.8 (8) #1  3"  3'  4  10  5  11  7  8  6  1  2
+history 3.8 (8) #2  3"  3'  4  10  5  11  7  8  6  2  1
+history 3.8 (8) #3  3"  3'  4  10  5  8  11  7  6  1  2
+history 3.8 (8) #4  3"  3'  4  10  5  8  11  7  6  2  1
+history 3.8 (8) #5  3"  3'  4  10  5  8  7  11  6  1  2
+history 3.8 (8) #6  3"  3'  4  10  5  8  7  11  6  2  1
+history 3.8 (8) #7  3"  3'  4  10  5  7  11  8  6  1  2
+history 3.8 (8) #8  3"  3'  4  10  5  7  11  8  6  2  1
+history 3.8 (8) #9  3'  3"  4  10  5  11  7  8  6  1  2
+history 3.8 (8) #10  3'  3"  4  10  5  11  7  8  6  2  1
+history 3.8 (8) #11  3'  3"  4  10  5  8  11  7  6  1  2
+history 3.8 (8) #12  3'  3"  4  10  5  8  11  7  6  2  1
+history 3.8 (8) #13  3'  3"  4  10  5  8  7  11  6  1  2
+history 3.8 (8) #14  3'  3"  4  10  5  8  7  11  6  2  1
+history 3.8 (8) #15  3'  3"  4  10  5  7  11  8  6  1  2
+history 3.8 (8) #16  3'  3"  4  10  5  7  11  8  6  2  1

@@ -79,7 +79,51 @@ README and [`examples/crispr-class1`](../../examples/crispr-class1).
 scbm solve '[[1,0,1],[0,1,1],[1,1,0]]' --solver maxsat
 scbm analyze '[[1,2,0],[0,1,2]]'
 scbm history solutions.nhx --leaf-orders orders.json --mode pareto
+scbm history solutions.nhx --leaf-orders orders.json --mode pareto --leaf-criterion extension
+scbm history resolution1.nhx resolution2.nhx --leaf-orders orders.json --mode pareto
 ```
+
+The default Pareto leaf criterion is the number of broken observed adjacencies.
+With `--leaf-criterion extension`, the second objective is the raw cost of
+added pair-loss events. For each observed order `(a, b, c, d)`, the added
+losses are `{a,b}`, `{b,c}`, and `{c,d}`, each in the context of that leaf's
+families. As in the supplementary paper's leaf-order augmentation, internal
+nodes retain the full leaf content; each pair is lost on an edge to a new leaf,
+and an additional leaf retains the full content. The implementation scores the
+resulting loss rows without constructing the augmented tree. Each loss costs
+`loss_open * blocks + loss_ext * 2`. Thus, for `m`
+observed pairs and `d` broken adjacencies, the extension cost is
+`loss_open * (m + d) + 2 * loss_ext * m`. JSON results include `history_cost`,
+`extension_cost`, and their sum `total_cost`.
+
+For a positive loss opening cost, this criterion gives the same Pareto front as
+broken adjacencies, expressed in cost units. It is a soft criterion, not a
+constraint requiring all observed adjacencies to be preserved. This mode
+accepts unsigned orders up to reversal and cannot be combined with
+`--respect-leaf-direction` or `--mode weighted`.
+
+Each NHX file gets its own Pareto front (or weighted optimum), comparing any
+histories within that file. The report identifies each history by its file and
+solution; each supplied leaf order must match every history. Files are
+processed sequentially.
+Add `--global-front` to compare histories from all input files together
+instead, retaining a single nondominated front (or global weighted optimum).
+
+On a terminal, `scbm history` prints a Rich report (cost model, history
+summary, solutions table, family orders grouped by result, tree);
+when the output is redirected it prints JSON.
+`--format json` or `--format rich` forces either, independently of the terminal,
+`--tree` appends the input history tree before ordering, with each node's
+contents and the families lost or gained on its incoming branch,
+and `--all` returns optimal orders instead of one representative per Pareto
+pair. When reversal is equivalent, orders and counts include one representative
+per reversal pair; with directed leaf adjacencies, both directions are retained.
+The JSON field `orders_up_to_reversal` indicates which rule applies. The solutions
+table shows each `(cost, broken)` pair once, with the number of orders attaining
+it; `--all` lists the orders in the family-order section. Pareto mode enumerates optimal orders
+to count them even without `--all`, which may take time. In weighted mode, the
+count is omitted unless `--all` is used. On a terminal, progress is reported to
+standard error as each history is solved; redirected JSON remains unchanged.
 
 ## Citation
 

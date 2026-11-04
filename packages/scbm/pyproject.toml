@@ -11,26 +11,36 @@ license = "MIT"
 license-files = ["LICENSE"]
 requires-python = ">=3.11"
 authors = [{ name = "Emeric Laberge", email = "emeric.laberge@umontreal.ca" }]
-maintainers = [{ name = "Emeric Laberge", email = "emeric.laberge@umontreal.ca" }]
-keywords = ["SCBM", "CBM", "consecutive blocks", "MaxSAT", "synteny", "phylogenetics"]
+maintainers = [
+  { name = "Emeric Laberge", email = "emeric.laberge@umontreal.ca" },
+]
+keywords = [
+  "SCBM",
+  "CBM",
+  "consecutive blocks",
+  "MaxSAT",
+  "synteny",
+  "phylogenetics",
+]
 classifiers = [
-    "Development Status :: 4 - Beta",
-    "Intended Audience :: Science/Research",
-    "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
-    "Topic :: Scientific/Engineering :: Bio-Informatics",
-    "Topic :: Scientific/Engineering :: Mathematics",
-    "Typing :: Typed",
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+  "Topic :: Scientific/Engineering :: Mathematics",
+  "Typing :: Typed",
 ]
 dependencies = ["sc1p>=0.1.0"]
 
 [project.optional-dependencies]
 sat = ["python-sat>=1.9.dev0"]
 history = ["synteny-tree>=0.1"]
-all = ["scbm[sat,history]"]
+cli = ["rich>=13"]
+all = ["scbm[sat,history,cli]"]
 
 [project.scripts]
 scbm = "scbm.cli:main"
