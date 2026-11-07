@@ -1,4 +1,4 @@
-────────────────────────────────────────────────────────── SCBM / HISTORY ANALYSIS · PARETO ──────────────────────────────────────────────────────────
+─────────────────────── SCBM / HISTORY ANALYSIS · PARETO ───────────────────────
 cost model  loss open 1 · loss ext 1 · gain open 1 · gain ext 1
 history 1.1 (1)  ! cost: 54 (reported 43) · 11 families · 18 events · leaf reversal enabled
   file: results/pareto-24/crispr-class1-resolvI-III-out-lo1-le1-go1.nhx
@@ -50,12 +50,13 @@ history 3.8 (8)  ! cost: 57 (reported 46) · 11 families · 19 events · leaf re
   file: results/pareto-24/crispr-class1-resolvIII-IV-out-lo1-le1-go1.nhx
 observed leaf orders  15 leaves
 PARETO FRONT 3 points · 5 history results · 11 orders
-#  history  history cost  broken adjacencies  orders at point
-1  1.3 (3)            57                  22                3
-2  1.3 (3)            55                  23                1
-3  1.4 (4)            57                  22                3
-4  1.4 (4)            55                  23                3
-5  1.4 (4)            54                  26                1
+#  history  history cost  extension cost  total cost  orders at point
+1  1.3 (3)            57             259         316                3
+2  1.3 (3)            55             260         315                1
+3  1.4 (4)            57             259         316                3
+4  1.4 (4)            55             260         315                3
+5  1.4 (4)            54             263         317                1
+Orders and counts are shown up to reversal.
 
 FAMILY ORDERS BY RESULT
 Each group corresponds to a numbered row above.

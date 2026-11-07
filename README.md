@@ -217,22 +217,15 @@ statistics. `benchmarks/db.py` loads these directories into DuckDB,
 seed used in the paper.
 
 `examples/crispr-class1/` contains the CRISPR-Cas class 1 instance of the
-supplementary material: the InOutParsimony history
-(`crispr-class1-out-lo20-le10-go1.out.nhx`), its input tree
-(`crispr-class1-resolv1.nhx`), the measurements reported in the paper
-(`crispr_class1_benchmark.json`), and a script that rebuilds the event matrix
-and solves it:
+supplementary material: the input tree (`crispr-class1-resolv1.nhx`) and the
+InOutParsimony history (`crispr-class1-out-lo20-le10-go1.out.nhx`).
+`results/pareto-24/` holds the 24 inferred histories with the observed leaf
+orders, and `results/pareto-24-gain-ext1/` the Pareto front of the paper's
+Table 1.
 
-```bash
-uv run --all-extras python examples/crispr-class1/run.py
-```
-
-It reports the lower bound `17`, the cost `26` of the identity order and the
-optimum `19`. Several orders reach this optimum, so the returned order may
-differ from the one drawn in the paper.
-
-For weighted costs, observed leaf orders, direction, and Pareto comparisons,
-see the [CRISPR example guide](examples/crispr-class1/README.md).
+For weighted costs, observed leaf orders, direction, Pareto comparisons, and
+the command that reproduces Table 1, see the
+[CRISPR example guide](examples/crispr-class1/README.md).
 
 ## Citation
 
